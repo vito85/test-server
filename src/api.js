@@ -4,7 +4,14 @@ const serverless = require("serverless-http");
 const app = express();
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/a", (req, res) => {
+	res.status(200).json(JSON.stringify({
+		a: 1
+	}))
+});
+
+
+router.get("/b", (req, res) => {
 	res.status(200).json(JSON.stringify({
 		headers: req.headers,
 		socket: {
